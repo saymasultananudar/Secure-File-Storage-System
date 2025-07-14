@@ -1,14 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Upload File</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1517511620798-cec17d428bc0?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .upload-container {
+      background-color: rgba(0, 0, 0, 0.7); /* dark transparent background */
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      width: 350px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .upload-container h1 {
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #ffffff;
+    }
+
+    .upload-container input[type="file"] {
+      margin: 15px 0;
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      border-radius: 8px;
+      width: 100%;
+      border: 1px solid #555;
+    }
+
+    .upload-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #667eea;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .upload-container button:hover {
+      background-color: #5a67d8;
+    }
+
+    .upload-container a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #a3bffa;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .upload-container a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h1>Upload File</h1>
-  <form action="/upload" method="POST" enctype="multipart/form-data">
-    <input type="file" name="file" required>
-    <button type="submit">Upload</button>
-  </form>
-  <a href="/logout">Logout</a>
+  <div class="upload-container">
+    <h1>Upload File</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" required>
+      <button type="submit">Upload</button>
+    </form>
+    <a href="/logout">Logout</a>
+  </div>
 </body>
 </html>
